@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "w_printf.h": "c",
+        "tools.h": "c",
+        "w_csfml.h": "c"
+    }
+}
