@@ -17,6 +17,7 @@ BUTTONS	=	./buttons
 MUSIC	=	./music
 
 SRC	=	$(SRC_FILES)/main.c     \
+		$(SRC_FILES)/animation.c     \
         $(SRC_FILES)/$(SPRITES)/pokedex.c	\
 		$(SRC_FILES)/$(SPRITES)/artwork.c	\
 		$(SRC_FILES)/$(BUTTONS)/init_buttons.c	\

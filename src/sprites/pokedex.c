@@ -12,6 +12,8 @@ void pokedex_update(pokedex_t *dex, game_t *game, int index)
 {
     sfRenderWindow_drawSprite(game->window, dex->sprite_pokedex, NULL);
     display_artwork(index, game->window);
+    if (game->button.but_animation == 1)
+        anim_sprite(game->window, index);
 
     return;
 }
