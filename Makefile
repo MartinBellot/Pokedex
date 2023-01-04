@@ -14,6 +14,8 @@ EVENTS	=	./events
 
 BUTTONS	=	./buttons
 
+MUSIC	=	./music
+
 SRC	=	$(SRC_FILES)/main.c     \
 		$(SRC_FILES)/animation.c     \
         $(SRC_FILES)/$(SPRITES)/pokedex.c	\
@@ -21,6 +23,7 @@ SRC	=	$(SRC_FILES)/main.c     \
 		$(SRC_FILES)/$(BUTTONS)/init_buttons.c	\
 		$(SRC_FILES)/$(BUTTONS)/handle_buttons.c	\
 		$(SRC_FILES)/$(EVENTS)/game_events.c	\
+		$(SRC_FILES)/$(MUSIC)/upload_music.c	\
 
 LIB	=	-L. -lmy
 
@@ -45,9 +48,11 @@ clean:
 	rm -f $(SRC_FILES)/$(OBJ)
 	rm -f libmy.a
 	rm -f lib/my/*.o
+	$(MAKE) -C searchbar/ clean
 
 fclean:	clean
 	rm -f $(NAME)
+	$(MAKE) -C searchbar/ fclean
 
 re: fclean all
 

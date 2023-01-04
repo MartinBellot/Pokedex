@@ -56,15 +56,18 @@ app_t app_create(char *title, int width, int height, int fps_limit)
     my_printf("[BUILD] create Player.\n");
     app.searchbar = searchbar_create((sfVector2f){50, 30});
 
-    app.pokemons = malloc(sizeof(poke_data_t) * 3);
 
-    app.pokemons[0].name = my_strdup("Pikachu");
-    app.pokemons[1].name = my_strdup("Piafabec");
-    app.pokemons[2].name = my_strdup("Salameche");
 
-    for (int i = 0; i < 3; i++) {
-        my_printf("POkE[%d] = %s\n", i, app.pokemons[i]);
-    }
+    char **poke_info = parse_file("pokemons.csv");
+    //poke_data_t **poke_data = init_pokemons(poke_info);
+    app.pokemons = init_pokemons(poke_info);
+    free_array_str2d(poke_info);
+
+    my_printf("-> %s\n", app.pokemons[1]->name);
+
+    //for (int i = 0; i < 3; i++) {
+      //  my_printf("POkE[%d] = %s\n", i, app.pokemons[i]);
+    //}
     //free(app.pokemons);
     return (app);
 }

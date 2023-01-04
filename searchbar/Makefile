@@ -5,7 +5,8 @@
 ## Makefile graphic
 ##
 
-SRC = src/*.c
+SRC = 	src/*.c \
+		src/parsing/*.c
 
 OBJ = *.o
 
@@ -28,6 +29,7 @@ all:
 clean:
 	make clean -C $(LIB_PATH)
 	rm -f $(OBJ)
+	rm -f *.o
 
 fclean: clean
 	make fclean -C $(LIB_PATH)

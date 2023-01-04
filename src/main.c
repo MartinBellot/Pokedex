@@ -11,10 +11,11 @@
 
 void game_update(game_t *game, int index)
 {
-    sfRenderWindow_clear(game->window, sfWhite);
+    sfRenderWindow_clear(game->window, sfBlack);
 
     pokedex_update(&game->dex, game, index);
-
+    generate_sound("22", game->music);
+    
     sfRenderWindow_display(game->window);
 }
 
@@ -39,14 +40,6 @@ int main(void)
         sfRenderWindow_setFramerateLimit(game.window, 60);
         game_events(&game, &game.button);
         game_update(&game, index);
-        if (game.button.but_change_pos[0] || game.button.but_change_pos[3])
-            index--;
-        if (game.button.but_change_pos[1] || game.button.but_change_pos[2])
-            index++;
-        if (index < 1)
-            index = 1;
-        if (index > 151)
-            index = 151;
     }
 
     free(game.button.but_sounds);

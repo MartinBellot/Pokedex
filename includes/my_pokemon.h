@@ -21,6 +21,12 @@
     #define HEIGHT 720
     #define uint unsigned int
 
+typedef struct music_s {
+
+    sfMusic *music;
+
+} music_t;
+
 typedef struct buttons_s {
 
     int *but_sounds;
@@ -48,6 +54,7 @@ typedef struct game_s {
     sfRenderWindow *window;
     sfEvent event;
 
+    music_t music;
     pokedex_t dex;
     button_t button;
 
@@ -70,5 +77,8 @@ void detect_animation_button(button_t *but, sfVector2i pos);
 void detect_sound_buttons(button_t *but, sfVector2i pos);
 void detect_buttons(game_t *game, button_t *but);
 void reset_buttons(button_t *but);
+
+/*----------------[MUSIC]----------------*/
+music_t generate_sound(char *nb_pokemon, music_t mus);
 
 #endif /* MY_RADAR_H */

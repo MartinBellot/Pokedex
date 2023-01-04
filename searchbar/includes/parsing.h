@@ -7,10 +7,12 @@
 
 #ifndef SRC_H_
     #define SRC_H_
-    #include "../lib/tools/include/tools.h"
-    #include "../lib/w_printf/include/w_printf.h"
-    #include "../lib/w_csfml/include/w_csfml.h"
-    #include <string.h>
+
+    #include "my.h"
+    #include <stdlib.h>
+
+    #define FALSE 0
+    #define TRUE 1
 
 /* struct poke data */
 typedef struct poke_data_s {
@@ -30,8 +32,14 @@ typedef struct poke_data_s {
     char *height_m;
     char *generation;
     char *is_legendary;
-
 } poke_data_t;
+
+
+char *str_recat(char *dest, const char *src);
+void free_array_str2d(char **str);
+char **str1d_to_str2d(const char *str);
+char *file_to_str_getline(const char *filename);
+char *str_recat(char *dest, const char *src);
 
 /* parse_file */
 char **parse_file(const char *file);
