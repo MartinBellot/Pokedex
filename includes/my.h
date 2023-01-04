@@ -47,6 +47,5 @@
     char *concat_params(int argc, char**argv);
     int my_ls_l(char *path);
     int my_detector(char *path);
-    void display_artwork(int index, sfRenderWindow *window);
 
 #endif /* MY_H */

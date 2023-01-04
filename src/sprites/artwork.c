@@ -5,7 +5,7 @@
 ** Display the artwork of the selected pokemon
 */
 
-#include <SFML/Graphics.h>
+#include "../includes/my_pokemon.h"
 
 void display_artwork(int index, sfRenderWindow *window)
 {

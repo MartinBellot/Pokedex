@@ -8,10 +8,10 @@
 #include "my.h"
 #include "my_pokemon.h"
 
-void pokedex_update(pokedex_t *dex, game_t *game)
+void pokedex_update(pokedex_t *dex, game_t *game, int index)
 {
     sfRenderWindow_drawSprite(game->window, dex->sprite_pokedex, NULL);
-    display_artwork(151, game->window);
+    display_artwork(index, game->window);
 
     return;
 }

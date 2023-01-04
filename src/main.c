@@ -9,11 +9,11 @@
 #include "my_pokemon.h"
 #include <string.h>
 
-void game_update(game_t *game)
+void game_update(game_t *game, int index)
 {
     sfRenderWindow_clear(game->window, sfWhite);
 
-    pokedex_update(&game->dex, game);
+    pokedex_update(&game->dex, game, index);
 
     sfRenderWindow_display(game->window);
 }
@@ -33,11 +33,12 @@ game_t create_game(char *title)
 int main(void)
 {
     game_t game = create_game("My_pokemon");
+    int index = 1;
 
     while (sfRenderWindow_isOpen(game.window)){
         sfRenderWindow_setFramerateLimit(game.window, 60);
         game_events(&game, &game.button);
-        game_update(&game);
+        game_update(&game, index);
     }
 
     free(game.button.but_sounds);

@@ -56,7 +56,8 @@ typedef struct game_s {
 
 /*----------------[POKEDEX]----------------*/
 pokedex_t create_pokedex(char *path);
-void pokedex_update(pokedex_t *dex, game_t *game);
+void pokedex_update(pokedex_t *dex, game_t *game, int index);
+void display_artwork(int index, sfRenderWindow *window);
 
 /*----------------[EVENTS]----------------*/
 void game_events(game_t *game, button_t *but);
