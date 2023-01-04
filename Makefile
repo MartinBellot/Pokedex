@@ -34,6 +34,7 @@ clean:
 	rm -f libstat.a
 	rm -f libmy.a
 	rm -f liblist.a
+	rm -f lib/my/*.o
 
 fclean:	clean
 	rm -f $(NAME)
