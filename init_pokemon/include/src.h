@@ -30,6 +30,7 @@ typedef struct poke_data_s {
     char *height_m;
     char *generation;
     char *is_legendary;
+
 } poke_data_t;
 
 /* parse_file */

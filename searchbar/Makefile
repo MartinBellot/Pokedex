@@ -29,6 +29,7 @@ all:
 clean:
 	make clean -C $(LIB_PATH)
 	rm -f $(OBJ)
+	rm -f *.o
 
 fclean: clean
 	make fclean -C $(LIB_PATH)
