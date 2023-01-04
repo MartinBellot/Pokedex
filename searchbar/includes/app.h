@@ -13,10 +13,13 @@
     #include <SFML/Window.h>
     #include "my.h"
     #include <stdlib.h>
+    #include "parsing.h"
 
+
+/*
 typedef struct poke_data_s {
     char *name;
-} poke_data_t;
+} poke_data_t;*/
 
 typedef struct text_s {
     sfText *text;
@@ -51,7 +54,7 @@ typedef struct app_s {
     sfRenderWindow *window;
     sfEvent event;
     searchbar_t searchbar;
-    poke_data_t *pokemons;
+    poke_data_t **pokemons;
 } app_t;
 
 int rectangleshape_is_hover(sfRenderWindow *window,

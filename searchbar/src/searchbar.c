@@ -21,10 +21,7 @@ int searchbar_destroy(searchbar_t *searchbar)
 
 int searchbar_events(searchbar_t *searchbar, app_t *app)
 {
-
     textbox_events(&searchbar->txtbox, app);
-
-
     return (0);
 }
 
@@ -44,7 +41,7 @@ int text_in_word(char *text, char *word)
     for (int i = 0; word[i] != '\0'; i++) {
         if (word[i] == text[j])
             j += 1;
-        else 
+        else
             j = 0;
         if (j == my_strlen(text))
             return (1);
@@ -59,12 +56,12 @@ int find_elements(char *text, app_t *app, searchbar_t *searchbar)
     char *text_nonsensitive;
     char *pokemon_nonsensitive;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 150; i++) {
         text_nonsensitive = my_strupcase(text);
         pokemon_nonsensitive = my_strupcase(text);
-        if (text_in_word(my_strupcase(text), my_strupcase(app->pokemons[i].name)) && my_strlen(text) > 1) {
-            if (is_in_array(array, n, app->pokemons[i].name) == 0) {
-                array[n] = my_strdup(app->pokemons[i].name);
+        if (text_in_word(my_strupcase(text), my_strupcase(app->pokemons[i]->name)) && my_strlen(text) > 1) {
+            if (is_in_array(array, n, app->pokemons[i]->name) == 0) {
+                array[n] = my_strdup(app->pokemons[i]->name);
                 n += 1;
             }
         }
@@ -77,7 +74,6 @@ int find_elements(char *text, app_t *app, searchbar_t *searchbar)
             sfText_setString(searchbar->elements[i].text.text, array[i]);
         else
             sfText_setString(searchbar->elements[i].text.text, "none");
-
     }
     for (int i = 0; array[i] != NULL; i++)
         free(array[i]);

@@ -5,7 +5,8 @@
 ## Makefile graphic
 ##
 
-SRC = src/*.c
+SRC = 	src/*.c \
+		src/parsing/*.c
 
 OBJ = *.o
 
