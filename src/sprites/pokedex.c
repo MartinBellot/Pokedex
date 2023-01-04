@@ -11,6 +11,7 @@
 void pokedex_update(pokedex_t *dex, game_t *game)
 {
     sfRenderWindow_drawSprite(game->window, dex->sprite_pokedex, NULL);
+    display_artwork(151, game->window);
 
     return;
 }
