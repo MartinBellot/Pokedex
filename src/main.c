@@ -12,6 +12,8 @@
 void game_update(game_t *game, int index)
 {
     sfRenderWindow_clear(game->window, sfBlack);
+    pokedex_update(&game->dex, game, index);
+
     sfRenderWindow_display(game->window);
 }
 
