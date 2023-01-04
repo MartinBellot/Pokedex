@@ -16,9 +16,10 @@ BUTTONS	=	./buttons
 
 SRC	=	$(SRC_FILES)/main.c     \
         $(SRC_FILES)/$(SPRITES)/pokedex.c	\
+		$(SRC_FILES)/$(SPRITES)/artwork.c	\
 		$(SRC_FILES)/$(BUTTONS)/init_buttons.c	\
 		$(SRC_FILES)/$(BUTTONS)/handle_buttons.c	\
-		$(SRC_FILES)/$(EVENTS)/game_events.c
+		$(SRC_FILES)/$(EVENTS)/game_events.c	\
 
 LIB	=	-L. -lmy
 
