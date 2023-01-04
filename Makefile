@@ -8,7 +8,17 @@
 
 SRC_FILES	=	./src
 
-SRC	=	$(SRC_FILES)/main.c
+SPRITES =       ./sprites
+
+EVENTS	=	./events
+
+BUTTONS	=	./buttons
+
+SRC	=	$(SRC_FILES)/main.c     \
+        $(SRC_FILES)/$(SPRITES)/pokedex.c	\
+		$(SRC_FILES)/$(BUTTONS)/init_buttons.c	\
+		$(SRC_FILES)/$(BUTTONS)/handle_buttons.c	\
+		$(SRC_FILES)/$(EVENTS)/game_events.c
 
 LIB	=	-L. -lmy
 
@@ -31,9 +41,7 @@ clean:
 	rm -f *~
 	rm -f $(OBJ)
 	rm -f $(SRC_FILES)/$(OBJ)
-	rm -f libstat.a
 	rm -f libmy.a
-	rm -f liblist.a
 	rm -f lib/my/*.o
 
 fclean:	clean
